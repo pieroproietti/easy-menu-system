@@ -7,13 +7,6 @@ options:
   - name: adapt
     descr: adapt monitor resolution for VM only
     command: eggs adapt
-    flags: 
-    - flag: "help"
-      descr: "help"
-      type: "boolean"
-    - flag: "verbose"
-      descr: "verbose"
-      type: "boolean"
     dependencies:
       - dep: ls /usr/bin/adapt
   #- name: analyze
@@ -22,25 +15,6 @@ options:
   - name: calamares
     descr: configure calamares or install or configure it
     command: eggs calamares --help
-    flags:
-    - flag: "help"
-      descr: "help"
-      type: "boolean"
-    - flag: "install"
-      descr: "install calamares and it's dependencies"
-      type: "boolean"
-    - flag: "release"
-      descr: "release: remove calamares and all it's dependencies after the installation"
-      type: "boolean"
-    - flag: "remove"
-      descr: "remove calamares and it's dependencies"
-      type: "boolean"
-    - flag: "theme"
-      descr: "theme/branding for eggs and calamares"
-      type: "string"
-    - flag: "verbose"
-      descr: "verbose"
-      type: "boolean"
   #- name: config
   #  descr: Configure and install prerequisites deb packages to run it
   #  command: sudo eggs config
@@ -50,119 +24,19 @@ options:
   - name: dad
     descr: ask help from daddy - TUI configuration helper
     command: sudo eggs dad --default
-    flags:
-    - flag: "clean"
-      descr: "clean and rebuild configuration"
-      type: "boolean"
-    - flag: "default"
-      descr: "clean and rebuild configuration default values"
-      type: "boolean"
-
   - name: install
     descr: 'krill: the CLI system installer - the egg became a penguin!'
     command: sudo eggs install
-    flags:
-    - flag: "none"
-      descr: " Swap none: 256M"
-      type: "boolean"
-    - flag: "suspend"
-      descr: "Swap suspend: RAM x 2"
-      type: "boolean"
-    - flag: "custom"
-      descr: "custom unattended configuration"
-      type: "string"
-    - flag: "domain"
-      descr: "Domain name, defult: .local"
-      type: "string"
-    - flag: "help"
-      descr: "help"
-      type: "boolean"
-    - flag: "ip"
-      descr: "hostname as ip, eg: ip-192-168-1-33"
-      type: "boolean"
-    - flag: "crypted"
-      descr: "Crypted CLI installation"
-    - flag: "Crypted CLI installation"
-      descr: "assume Yes"
-      type: "boolean"
-    - flag: "pve"
-      descr: "Proxmox VE partition"
-      type: "boolean"
-    - flag: "random"
-      descr: "Add random chars to hostname, eg: colibri-ay412dt"
-      type: "boolean"
-    - flag: "small"
-      descr: "Swap small: RAM"
-      type: "boolean"
-    - flag: "unattende"
-      descr: "Unattended installation"
-      type: "boolen"
-    - flag: "verbose"
-      descr: "verbose"
-      type: "boolean"
     dependencies:
     - dep: ls /run/live/rootfs/filesystem.squashfs/
-
   - name: kill
     descr: kill the eggs/free the nest
     command: sudo eggs kill
-    flags:
-    - flag: "help"
-      descr: "help"
-      type: "boolean"
-    - flag: "verbose"
-      descr: "verbose"
-      type: "boolean"
     dependencies:
     - dep: ls /home/eggs
-
   - name: produce
     descr: produce a live image from your system whithout your data
     command: eggs produce --help
-    flags:
-    - flag: "addons"
-      descr: "addons to be used: adapt, ichoice, pve, rsupport"
-      type: "string[]"
-    - flag: "backup"
-      descr: "backup mode (CRYPTED)"
-      type: "boolean"
-    - flag: "basename"
-      descr: "basename, default hostname"
-      type: "string"
-    - flag: "clone"
-      descr: "clone mode"
-      type: "boolean"
-    - flag: "fasr"
-      descr: "fast compression"
-      type: "boolean"
-    - flag: "help"
-      descr: "help"
-      type: "boolean"
-    - flag: "max"
-      descr: "max compression"
-      type: "boolean"
-    - flag: "nointeractive"
-      descr: "assume Yes"
-      type: "boolean"
-    - flag: "prefix"
-      descr: "prefix=value"
-      type: "string"
-    - flag: "release"
-      descr: "release: max compression, remove penguins-eggs and calamares after installation"
-      type: "boolean"
-    - flag: "script"
-      descr: "script mode. Just generate scripts to manage iso build"
-      type: "boolean"
-    - flag: "theme"
-      descr: "theme for livecd, calamares branding and partitions"
-      type: "string"
-    - flag: "verbose"
-      descr: "verbos"
-      type: "boolean"
-    - flag: "yolk"
-      descr: "force yolk renew"
-      type: "boolean"
-
   - name: status
     descr: informations about eggs status
     command: eggs status

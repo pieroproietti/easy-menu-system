@@ -1,1 +1,1 @@
-./core-menu.sh -c configs/eggs/eggs.json
+./core-menu.sh -d -c configs/eggs/eggs.json 
